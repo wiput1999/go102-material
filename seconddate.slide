@@ -164,3 +164,37 @@ The * operator denotes the pointer's underlying value.
 This is known as "dereferencing" or "indirecting".
 
 Unlike C, Go has no pointer arithmetic.
+
+* Type
+.background whitebg.png
+
+    type newType T
+
+    type text string
+
+    type aliasType = T
+
+    type text = string
+
+* struct type
+
+* func type
+
+* method
+
+* interface{}
+
+* defer
+
+* go routine
+
+* channel
+
+* anonymous function
+
+* first class function
+
+* higher order function
+
+* closure function
+
