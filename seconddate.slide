@@ -1,0 +1,166 @@
+go
+
+14:03 30 Nov 2019
+Tags: golang
+
+Pallat Anchaleechamaikorn
+golang developer
+Technical Coach
+
+yod.pallat@gmail.com
+https://github.com/pallat
+
+* Array
+.background whitebg.png
+
+var name [n]T
+
+    var array [5]string
+
+* Array (for)
+.background whitebg.png
+
+var name [n]T
+
+    var array [5]string
+
+    for i := range array {
+        fmt.Println(array[i])
+    }
+
+* Array (for)
+.background whitebg.png
+
+var name [n]T
+
+    var array [5]string
+
+    for i, v := range array {
+        fmt.Println(i, v)
+    }
+
+* Slice
+.background whitebg.png
+
+var name []T
+
+    var slice []int
+
+    primes := [...]int{2, 3, 5, 7, 11, 13}    
+    slice = primes[1:4]
+
+    for i := range slice {
+        fmt.Println(slice[i])
+    }
+
+* Zero value of slice is nil
+.background whitebg.png
+
+    var s []int
+
+    if s == nil {
+        fmt.Println("it's nil")
+    }
+
+make it first
+
+    s := make([]int, 5)
+
+* append slice
+.background whitebg.png
+
+    s := []int{1, 2, 3, 4, 5}
+    s = append(s, 6, 7, 8)
+
+
+* Exercise
+
+.background whitebg.png
+.link https://tour.golang.org/moretypes/18 https://tour.golang.org/moretypes/18
+.link https://go-tour-th.appspot.com/moretypes/18 https://go-tour-th.appspot.com/moretypes/18
+
+
+* map[T]T
+.background whitebg.png
+
+    var m map[string]string
+
+    if m == nil {
+        fmt.Println("it's nil")
+    }
+
+
+* map[T]T
+.background whitebg.png
+
+make it first
+
+    m := make(map[string]string)
+
+    if m == nil {
+        fmt.Println("it's nil")
+    }
+
+    m["a"] = "apple"
+    m["b"] = "banana"
+    m["c"] = "coconut"
+    m["d"] = "durian"
+    m["e"] = "elderberry"
+    m["f"] = "fig"
+    m["g"] = "guava"
+
+
+* map[T]T
+.background whitebg.png
+
+    m := map[string]string{
+        "a" : "apple",
+        "b" : "banana",
+        "c" : "coconut",
+        "d" : "durian",
+        "e" : "elderberry",
+        "f" : "fig",
+        "g" : "guava",
+    }
+
+    delete(m, "d")
+
+    for k, v := range m {
+        fmt.Println(k, v)
+    }
+
+* len()
+.background whitebg.png
+
+    s := []primes{2, 3, 5, 7, 11, 13}
+    m := map[string]string{
+        "a" : "apple",
+        "b" : "banana",
+        "c" : "coconut",
+        "d" : "durian",
+        "e" : "elderberry",
+        "f" : "fig",
+        "g" : "guava",
+    }
+
+    fmt.Println(len(s), len(m))
+
+* Pointer
+.background whitebg.png
+
+Go has pointers. A pointer holds the memory address of a value.
+
+The type *T is a pointer to a T value. Its zero value is nil.
+
+    var p *int
+The & operator generates a pointer to its operand.
+
+    i := 42
+    p = &i
+The * operator denotes the pointer's underlying value.
+
+    fmt.Println(*p) // read i through the pointer p
+    *p = 21         // set i through the pointer p
+This is known as "dereferencing" or "indirecting".
+
+Unlike C, Go has no pointer arithmetic.

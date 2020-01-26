@@ -1,0 +1,331 @@
+go
+
+14:03 30 Nov 2019
+Tags: golang
+
+Pallat Anchaleechamaikorn
+golang developer
+Technical Coach
+
+yod.pallat@gmail.com
+https://github.com/pallat
+
+
+* Getting Started
+.background whitebg.png
+
+*Installing* *go*
+
+
+.link https://golang.org/ https://golang.org/
+.link https://go.dev/ https://go.dev/
+
+*mac/linux*
+Download file.tar.gz
+
+*windows*
+Download file.zip
+
+
+* Installing go
+.background whitebg.png
+
+*extract*
+
+linux:
+
+    /home/{your user}/goroot
+
+Macbook:
+
+    /Users/{your user}/goroot
+
+windows:
+
+    C:\go
+
+
+* add go command
+.background whitebg.png
+
+*windows*
+
+    set PATH=%PATH%;C:\go\bin
+
+*linux/Macbook*
+
+    export PATH=$PATH:~/goroot/bin
+
+* test go command
+.background whitebg.png
+
+    go version
+    go env
+
+
+* Initial a project
+.background whitebg.png
+
+*linux/Macbook
+
+    mkdir -p ~/projects/hello
+    cd hello
+
+*windows*
+
+    md projects
+    cd projects
+    md hello
+    cd hello
+
+* Open VS Code
+.background whitebg.png
+
+    code .
+
+* Initial go module
+.background whitebg.png
+
+    go mod init hello
+
+
+* Hello World
+.background whitebg.png
+
+main.go
+
+    package main
+
+    func main() {
+        println("Hello World")
+    }
+
+run
+
+    go run main.go
+
+* Basic syntax
+.background whitebg.png
+
+Variable declaration
+
+    var s string
+    var s string = "Hello World"
+
+    var i int
+    var i int = 9
+
+* Basic syntax
+.background whitebg.png
+
+Function
+
+    func add(a int, b int) int {
+        return a + b
+    }
+
+    func add(a, b int) int {
+        return a + b
+    }
+
+* Basic syntax
+.background whitebg.png
+
+if/else
+
+    if a != b {
+        println("a not equal to b")
+    } else if a < b {
+        println("a less than b")
+    } else {
+        println("ok")
+    }
+
+* Basic syntax
+.background whitebg.png
+
+for
+
+    for i := 0; i < 10; i++ {
+
+    }
+
+    for i <= 10 {
+
+    }
+
+    for {
+        
+    }
+
+* Exercise
+.background whitebg.png
+
+open a file oscar_age_mail.csv
+print any actors name who got the oscar more than one time
+
+
+    Marlon Brando
+    Daniel Day-Lewis
+    Sean Penn
+    Tom Hanks
+    Fredric March
+    Spencer Tracy
+    Gary Cooper
+    Jack Nicholson
+    Dustin Hoffman
+
+
+* unit testing in go
+
+conditions
+
+*filename_test.go*
+
+    import "testing"
+
+    func TestACase(t *testing.T) {
+
+    }
+
+    func Test_a_case(t *testing.T) {
+
+    }
+
+    func TestCases(t *testing.T) {
+        t.Run("case number 1", func(t *testing.T) {
+            
+        })
+
+        t.Run("case number 2", func(t *testing.T) {
+
+        })
+    }
+
+* TDD
+.background whitebg.png
+
+Test Driven Development
+
+.image classic_tdd.png
+
+* TDD with the classic problem
+.background whitebg.png
+
+FizzBuzz
+
+    given 1 then "1"
+    given 2 then "2"
+    given 3 then "Fizz"
+    given 4 then "4"
+    given 5 then "Buzz"
+
+* TDD with the classic problem
+.background whitebg.png
+
+FizzBuzz
+
+    given 1 then "1"
+    given 2 then "2"
+    given 3 then "Fizz"
+    given 4 then "4"
+    given 5 then "Buzz"
+    given 6 then "Fizz"
+    given 7 then "7"
+    given 8 then "8"
+    given 9 then "Fizz"
+    given 10 then "Buzz"
+
+* TDD with the classic problem
+.background whitebg.png
+
+FizzBuzz
+
+    given 1 then "1"
+    given 2 then "2"
+    given 3 then "Fizz"
+    given 4 then "4"
+    given 5 then "Buzz"
+    given 6 then "Fizz"
+    given 7 then "7"
+    given 8 then "8"
+    given 9 then "Fizz"
+    given 10 then "Buzz"
+    given 12 then "Fizz"
+    given 15 then "FizzBuzz"
+    given 18 then "Fizz"
+    given 20 then "Buzz"
+    given 30 then "FizzBuzz"
+
+
+* TDD with the classic problem
+.background whitebg.png
+
+FizzBuzz
+
+any number divisible by three is replaced by the word fizz and any number divisible by five by the word buzz. Numbers divisible by 15 become fizz buzz
+
+    1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14,
+    Fizz Buzz, 16, 17, Fizz, 19, Buzz, Fizz, 22, 23, Fizz, Buzz, 26,
+    Fizz, 28, 29, Fizz Buzz, 31, 32, Fizz, 34, Buzz, Fizz, ...
+
+
+* package
+.background whitebg.png
+
+rules
+
+    only one package in any directory except testing file can plus suffix _test in there
+
+    exposed name begins with capital charactor
+
+* Exercise
+.background whitebg.png
+
+*RESTful* API of *FizzBuzz*
+
+    try net/http with gorilla/mux
+
+* Variable
+.background whitebg.png
+
+    var c, python, java bool
+
+    var i, j int = 1, 2
+
+    var c, python, java = true, false, "no!"
+
+    c, python, java := true, false, "no!"
+
+
+* Type
+.background whitebg.png
+
+basic type
+
+    bool
+
+    string
+
+    int  int8  int16  int32  int64
+
+    uint uint8 uint16 uint32 uint64 uintptr
+
+    byte  // alias for uint8
+
+    rune  // alias for int32
+          // represents a Unicode code point
+
+    float32 float64
+
+    complex64 complex128
+
+
+* Zero Value
+
+.background whitebg.png
+
+- *0*  _for_ _numeric_ _types_
+- *false* _for_ _the_ _boolean_ _type_
+- *""* (the empty string) for strings
+
