@@ -207,7 +207,7 @@ conditions
 
 Test Driven Development
 
-.image classic_tdd.png
+.image ./images/classic_tdd.png
 
 * TDD with the classic problem
 .background whitebg.png

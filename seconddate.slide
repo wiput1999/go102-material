@@ -11,14 +11,14 @@ yod.pallat@gmail.com
 https://github.com/pallat
 
 * Array
-.background whitebg.png
+.background ./images/whitebg.png
 
 var name [n]T
 
     var array [5]string
 
 * Array (for)
-.background whitebg.png
+.background ./images/whitebg.png
 
 var name [n]T
 
@@ -29,7 +29,7 @@ var name [n]T
     }
 
 * Array (for)
-.background whitebg.png
+.background ./images/whitebg.png
 
 var name [n]T
 
@@ -40,7 +40,7 @@ var name [n]T
     }
 
 * Slice
-.background whitebg.png
+.background ./images/whitebg.png
 
 var name []T
 
@@ -54,7 +54,7 @@ var name []T
     }
 
 * Zero value of slice is nil
-.background whitebg.png
+.background ./images/whitebg.png
 
     var s []int
 
@@ -67,7 +67,7 @@ make it first
     s := make([]int, 5)
 
 * append slice
-.background whitebg.png
+.background ./images/whitebg.png
 
     s := []int{1, 2, 3, 4, 5}
     s = append(s, 6, 7, 8)
@@ -75,13 +75,13 @@ make it first
 
 * Exercise
 
-.background whitebg.png
+.background ./images/whitebg.png
 .link https://tour.golang.org/moretypes/18 https://tour.golang.org/moretypes/18
 .link https://go-tour-th.appspot.com/moretypes/18 https://go-tour-th.appspot.com/moretypes/18
 
 
 * map[T]T
-.background whitebg.png
+.background ./images/whitebg.png
 
     var m map[string]string
 
@@ -91,7 +91,7 @@ make it first
 
 
 * map[T]T
-.background whitebg.png
+.background ./images/whitebg.png
 
 make it first
 
@@ -111,7 +111,7 @@ make it first
 
 
 * map[T]T
-.background whitebg.png
+.background ./images/whitebg.png
 
     m := map[string]string{
         "a" : "apple",
@@ -130,7 +130,7 @@ make it first
     }
 
 * len()
-.background whitebg.png
+.background ./images/whitebg.png
 
     s := []primes{2, 3, 5, 7, 11, 13}
     m := map[string]string{
@@ -146,7 +146,7 @@ make it first
     fmt.Println(len(s), len(m))
 
 * Pointer
-.background whitebg.png
+.background ./images/whitebg.png
 
 Go has pointers. A pointer holds the memory address of a value.
 
@@ -166,7 +166,7 @@ This is known as "dereferencing" or "indirecting".
 Unlike C, Go has no pointer arithmetic.
 
 * Type
-.background whitebg.png
+.background ./images/whitebg.png
 
     type newType T
 
@@ -177,24 +177,215 @@ Unlike C, Go has no pointer arithmetic.
     type text = string
 
 * struct type
+.background ./images/whitebg.png
+
+    type rectangle struct {
+        w,l float64
+    }
+
+* struct usage
+.background ./images/whitebg.png
+
+    rec := rectangle{w: 10, l: 12}
+
+    area := rec.w * rec.l
 
 * func type
+.background ./images/whitebg.png
+
+    type area func(float64, float64) float64 
 
 * method
+.background ./images/whitebg.png
+
+    type rectangle struct {
+        w,l float64
+    }
+
+    func (r rectangle) area() float64 {
+        return r.w * r.l
+    }
+
+* method with pointer receiver
+.background ./images/whitebg.png
+
+    type rectangle struct {
+        w,l float64
+    }
+
+    func (r *rectangle) area() float64 {
+        return r.w * r.l
+    }
+
+    
+* method on primitive type
+.background ./images/whitebg.png
+
+    type text string
+
+    func (t text) split(sep string) []string{
+        return strings.Split(string(t), sep)
+    }
+
 
 * interface{}
+.background ./images/whitebg.png
+
+empty interface
+
+    var i interface{}
+
+    i = 10
+    fmt.Printf("type is %T, value is %v\n", i, i)
+
+    i = "ten"
+    fmt.Printf("type is %T, value is %v\n", i, i)
+
+    i = struct {
+        number int
+        text string
+    } {
+        number: 10,
+        text: "ten",
+    }
+    fmt.Printf("type is %T, value is %v\n", i, i)
+
+    i = func() string {
+        return "10"
+    }
+    fmt.Printf("type is %T, value is %v\n", i, i)
+
+
+* interface: type assertion
+.background ./images/whitebg.png
+
+.play ./example/interface_assert.go
+
+
+* interface: type switch
+.background ./images/whitebg.png
+
+.play ./example/interface_switch.go
+
+* interface 
+
+.background ./images/whitebg.png
+
+To define a set of method signatures
+
+    Interfaces specify behaviors. 
+    An interface type defines a set 
+    of methods:
+
+
+    type areaer interface {
+        area() int
+    }
+
+
+`Interfaces` are `implemented` `implicitly`
+
+
+* interface: Stringer
+
+.background ./images/whitebg.png
+
+    type Stringer interface {
+        String() string
+    }
+
+* interface: error
+
+.background ./images/whitebg.png
+
+    type error interface {
+        Error() string
+    }
+
 
 * defer
+.background ./images/whitebg.png
 
-* go routine
+.play ./example/defer_simple.go
 
-* channel
+* defer
+.background ./images/whitebg.png
 
-* anonymous function
+defer is stack
 
-* first class function
+.play ./example/defer_stack.go
 
-* higher order function
+* defer
+.background ./images/whitebg.png
 
-* closure function
+.play ./example/defer_func.go
 
+* defer
+.background ./images/whitebg.png
+
+.play ./example/defer_anonymous.go
+
+* defer
+.background ./images/whitebg.png
+
+.play ./example/defer_panic.go
+
+
+* goroutine
+
+.background ./images/whitebg.png
+.play ./example/goroutine.go /^func main/,
+
+* goroutine
+
+.background ./images/whitebg.png
+.play ./example/gowait.go /^func main/,
+
+
+* channel 
+
+.background ./images/whitebg.png
+
+keyword `chan`
+
+    * no buffered channel
+    * buffered channel
+
+
+* buffered channel
+
+.background ./images/whitebg.png
+
+.play ./example/chanbuf.go /^func main/,
+
+* no buffered channel
+
+.background ./images/whitebg.png
+
+.play ./example/gochan.go /^func main/,
+
+
+
+* Function supports
+
+.background ./images/whitebg.png
+- anonymous functions
+- closures functions
+- first-class functions
+- variadic functions
+
+* Anonymous Function
+.background ./images/whitebg.png
+.play ./example/func_anonymous.go
+
+* Closure Function
+.background ./images/whitebg.png
+.play ./example/func_closure.go
+
+* Closure Function
+.background ./images/whitebg.png
+.play ./example/func_closure_more.go /func main/,/} // END/
+
+* First-Class Function
+.background ./images/whitebg.png
+.play ./example/func_firstclass.go
