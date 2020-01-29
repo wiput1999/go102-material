@@ -346,7 +346,7 @@ To define a set of method signatures
 * defer
 .background ./images/whitebg.png
 
-.play ./example/defer_simple.go
+.play ./example/defer/basic.go
 
 #############################################
 
@@ -355,42 +355,42 @@ To define a set of method signatures
 
 defer is stack
 
-.play ./example/defer_stack.go
+.play ./example/defer/stack.go
 
 #############################################
 
 * defer
 .background ./images/whitebg.png
 
-.play ./example/defer_func.go
+.play ./example/defer/func.go
 
 #############################################
 
 * defer
 .background ./images/whitebg.png
 
-.play ./example/defer_anonymous.go
+.play ./example/defer/anonymous.go
 
 #############################################
 
 * defer
 .background ./images/whitebg.png
 
-.play ./example/defer_panic.go
+.play ./example/defer/try_catch.go
 
 #############################################
 
 * goroutine
 
 .background ./images/whitebg.png
-.play ./example/goroutine.go /^func main/,
+.play ./example/go/routine.go /^func main/,
 
 #############################################
 
 * goroutine
 .background ./images/whitebg.png
 
-.play ./example/gowait.go /^func main/,
+.play ./example/go/wait.go /^func main/,
 
 #############################################
 
@@ -407,14 +407,14 @@ keyword `chan`
 * buffered channel
 .background ./images/whitebg.png
 
-.play ./example/chanbuf.go /^func main/,
+.play ./example/channel/buffered.go /^func main/,
 
 #############################################
 
 * no buffered channel
 .background ./images/whitebg.png
 
-.play ./example/gochan.go /^func main/,
+.play ./example/channel/signal.go /^func main/,
 
 #############################################
 
@@ -430,22 +430,22 @@ keyword `chan`
 
 * Anonymous Function
 .background ./images/whitebg.png
-.play ./example/func_anonymous.go
+.play ./example/functions/anonymous.go
 
 #############################################
 
 * Closure Function
 .background ./images/whitebg.png
-.play ./example/func_closure.go
+.play ./example/functions/closure.go
 
 #############################################
 
 * Closure Function
 .background ./images/whitebg.png
-.play ./example/func_closure_more.go /func main/,/} // END/
+.play ./example/functions/closure2.go /func main/,/} // END/
 
 #############################################
 
 * First-Class Function
 .background ./images/whitebg.png
-.play ./example/func_firstclass.go
+.play ./example/functions/firstclass.go
