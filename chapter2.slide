@@ -17,6 +17,8 @@ var name [n]T
 
     var array [5]string
 
+#############################################
+
 * Array (for)
 .background ./images/whitebg.png
 
@@ -28,6 +30,8 @@ var name [n]T
         fmt.Println(array[i])
     }
 
+#############################################
+
 * Array (for)
 .background ./images/whitebg.png
 
@@ -38,6 +42,8 @@ var name [n]T
     for i, v := range array {
         fmt.Println(i, v)
     }
+
+#############################################
 
 * Slice
 .background ./images/whitebg.png
@@ -53,6 +59,8 @@ var name []T
         fmt.Println(slice[i])
     }
 
+#############################################
+
 * Zero value of slice is nil
 .background ./images/whitebg.png
 
@@ -66,6 +74,8 @@ make it first
 
     s := make([]int, 5)
 
+#############################################
+
 * append slice
 .background ./images/whitebg.png
 
@@ -73,12 +83,15 @@ make it first
     s = append(s, 6, 7, 8)
 
 
+#############################################
+
 * Exercise
 
 .background ./images/whitebg.png
 .link https://tour.golang.org/moretypes/18 https://tour.golang.org/moretypes/18
 .link https://go-tour-th.appspot.com/moretypes/18 https://go-tour-th.appspot.com/moretypes/18
 
+#############################################
 
 * map[T]T
 .background ./images/whitebg.png
@@ -89,6 +102,7 @@ make it first
         fmt.Println("it's nil")
     }
 
+#############################################
 
 * map[T]T
 .background ./images/whitebg.png
@@ -109,6 +123,7 @@ make it first
     m["f"] = "fig"
     m["g"] = "guava"
 
+#############################################
 
 * map[T]T
 .background ./images/whitebg.png
@@ -129,6 +144,8 @@ make it first
         fmt.Println(k, v)
     }
 
+#############################################
+
 * len()
 .background ./images/whitebg.png
 
@@ -144,6 +161,8 @@ make it first
     }
 
     fmt.Println(len(s), len(m))
+
+#############################################
 
 * Pointer
 .background ./images/whitebg.png
@@ -165,6 +184,8 @@ This is known as "dereferencing" or "indirecting".
 
 Unlike C, Go has no pointer arithmetic.
 
+#############################################
+
 * Type
 .background ./images/whitebg.png
 
@@ -176,12 +197,16 @@ Unlike C, Go has no pointer arithmetic.
 
     type text = string
 
+#############################################
+
 * struct type
 .background ./images/whitebg.png
 
     type rectangle struct {
         w,l float64
     }
+
+#############################################
 
 * struct usage
 .background ./images/whitebg.png
@@ -190,10 +215,14 @@ Unlike C, Go has no pointer arithmetic.
 
     area := rec.w * rec.l
 
+#############################################
+
 * func type
 .background ./images/whitebg.png
 
     type area func(float64, float64) float64 
+
+#############################################
 
 * method
 .background ./images/whitebg.png
@@ -206,6 +235,8 @@ Unlike C, Go has no pointer arithmetic.
         return r.w * r.l
     }
 
+#############################################
+
 * method with pointer receiver
 .background ./images/whitebg.png
 
@@ -217,7 +248,8 @@ Unlike C, Go has no pointer arithmetic.
         return r.w * r.l
     }
 
-    
+#############################################
+
 * method on primitive type
 .background ./images/whitebg.png
 
@@ -227,6 +259,7 @@ Unlike C, Go has no pointer arithmetic.
         return strings.Split(string(t), sep)
     }
 
+#############################################
 
 * interface{}
 .background ./images/whitebg.png
@@ -255,20 +288,23 @@ empty interface
     }
     fmt.Printf("type is %T, value is %v\n", i, i)
 
+#############################################
 
 * interface: type assertion
 .background ./images/whitebg.png
 
-.play ./example/interface_assert.go
+.play ./example/interface/assertions.go
 
+#############################################
 
 * interface: type switch
 .background ./images/whitebg.png
 
-.play ./example/interface_switch.go
+.play ./example/interface/switch_type.go
+
+#############################################
 
 * interface 
-
 .background ./images/whitebg.png
 
 To define a set of method signatures
@@ -285,6 +321,7 @@ To define a set of method signatures
 
 `Interfaces` are `implemented` `implicitly`
 
+#############################################
 
 * interface: Stringer
 
@@ -294,6 +331,8 @@ To define a set of method signatures
         String() string
     }
 
+#############################################
+
 * interface: error
 
 .background ./images/whitebg.png
@@ -302,11 +341,14 @@ To define a set of method signatures
         Error() string
     }
 
+#############################################
 
 * defer
 .background ./images/whitebg.png
 
 .play ./example/defer_simple.go
+
+#############################################
 
 * defer
 .background ./images/whitebg.png
@@ -315,35 +357,44 @@ defer is stack
 
 .play ./example/defer_stack.go
 
+#############################################
+
 * defer
 .background ./images/whitebg.png
 
 .play ./example/defer_func.go
+
+#############################################
 
 * defer
 .background ./images/whitebg.png
 
 .play ./example/defer_anonymous.go
 
+#############################################
+
 * defer
 .background ./images/whitebg.png
 
 .play ./example/defer_panic.go
 
+#############################################
 
 * goroutine
 
 .background ./images/whitebg.png
 .play ./example/goroutine.go /^func main/,
 
-* goroutine
+#############################################
 
+* goroutine
 .background ./images/whitebg.png
+
 .play ./example/gowait.go /^func main/,
 
+#############################################
 
 * channel 
-
 .background ./images/whitebg.png
 
 keyword `chan`
@@ -351,20 +402,21 @@ keyword `chan`
     * no buffered channel
     * buffered channel
 
+#############################################
 
 * buffered channel
-
 .background ./images/whitebg.png
 
 .play ./example/chanbuf.go /^func main/,
 
-* no buffered channel
+#############################################
 
+* no buffered channel
 .background ./images/whitebg.png
 
 .play ./example/gochan.go /^func main/,
 
-
+#############################################
 
 * Function supports
 
@@ -374,17 +426,25 @@ keyword `chan`
 - first-class functions
 - variadic functions
 
+#############################################
+
 * Anonymous Function
 .background ./images/whitebg.png
 .play ./example/func_anonymous.go
+
+#############################################
 
 * Closure Function
 .background ./images/whitebg.png
 .play ./example/func_closure.go
 
+#############################################
+
 * Closure Function
 .background ./images/whitebg.png
 .play ./example/func_closure_more.go /func main/,/} // END/
+
+#############################################
 
 * First-Class Function
 .background ./images/whitebg.png
