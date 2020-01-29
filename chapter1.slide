@@ -101,14 +101,7 @@ windows:
 * Hello World
 .background whitebg.png
 
-main.go
-
-    package main
-
-    func main() {
-        println("Hello World")
-    }
-
+.play ./example/hello_world.go
 run
 
     go run main.go
