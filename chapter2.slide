@@ -270,6 +270,11 @@ keyword `chan`
 
 #############################################
 
+* Exercise
+    generate 10 random 16 bits and use 10 go-routine to encrypt it
+
+#############################################
+
 * Closure Function
 .background ./images/whitebg.png
 .play ./example/functions/closure.go
