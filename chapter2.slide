@@ -13,6 +13,13 @@ https://github.com/goyod
 https://github.com/pyod
 
 
+
+* Anonymous Function
+.background ./images/whitebg.png
+.play ./example/functions/anonymous.go
+
+#############################################
+
 * First-Class Function
 .background ./images/whitebg.png
 .play ./example/functions/firstclass.go
@@ -38,6 +45,52 @@ https://github.com/pyod
 
     type area func(float64, float64) float64 
 
+#############################################
+
+* defer
+.background ./images/whitebg.png
+
+.play ./example/defer/basic.go
+
+#############################################
+
+* defer
+.background ./images/whitebg.png
+
+defer is stack
+
+.play ./example/defer/stack.go
+
+#############################################
+
+* defer
+.background ./images/whitebg.png
+
+.play ./example/defer/func.go
+
+#############################################
+
+* defer
+.background ./images/whitebg.png
+
+.play ./example/defer/anonymous.go
+
+#############################################
+
+* defer
+.background ./images/whitebg.png
+
+.play ./example/defer/try_catch.go
+
+#############################################
+
+* Exercise
+.background ./images/whitebg.png
+
+    Make an API to generate JWT token
+
+    Make a Wrapper for FizzBuzz handler to validate JWT
+    
 #############################################
 
 * method
@@ -74,6 +127,16 @@ https://github.com/pyod
     func (t text) split(sep string) []string{
         return strings.Split(string(t), sep)
     }
+
+#############################################
+
+* Exercise
+.background ./images/whitebg.png
+
+change FizzBuzz to OOP like
+
+    fb := fizzbuzz.New(15)
+    fb.String()
 
 #############################################
 
@@ -159,40 +222,13 @@ To define a set of method signatures
 
 #############################################
 
-* defer
-.background ./images/whitebg.png
+* Exercise
 
-.play ./example/defer/basic.go
-
-#############################################
-
-* defer
-.background ./images/whitebg.png
-
-defer is stack
-
-.play ./example/defer/stack.go
-
-#############################################
-
-* defer
-.background ./images/whitebg.png
-
-.play ./example/defer/func.go
-
-#############################################
-
-* defer
-.background ./images/whitebg.png
-
-.play ./example/defer/anonymous.go
-
-#############################################
-
-* defer
-.background ./images/whitebg.png
-
-.play ./example/defer/try_catch.go
+    add a new API random a number and return FizzBuzz then test it
+    {
+        "number": 30000,
+        "message": "FizzBuzz"
+    }
 
 #############################################
 
@@ -231,22 +267,6 @@ keyword `chan`
 .background ./images/whitebg.png
 
 .play ./example/channel/signal.go /^func main/,
-
-#############################################
-
-* Function supports
-
-.background ./images/whitebg.png
-- anonymous functions
-- closures functions
-- first-class functions
-- variadic functions
-
-#############################################
-
-* Anonymous Function
-.background ./images/whitebg.png
-.play ./example/functions/anonymous.go
 
 #############################################
 
