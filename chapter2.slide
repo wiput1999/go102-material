@@ -12,6 +12,27 @@ https://github.com/pallat
 https://github.com/goyod
 https://github.com/pyod
 
+
+* First-Class Function
+.background ./images/whitebg.png
+.play ./example/functions/firstclass.go
+
+#############################################
+
+* Higher-Order Function
+.background ./images/whitebg.png
+
+.play ./example/functions/higher_order.go
+
+#############################################
+
+* Higher-Order Function
+.background ./images/whitebg.png
+
+.play ./example/functions/higher_order2.go
+
+#############################################
+
 * func type
 .background ./images/whitebg.png
 
@@ -239,8 +260,3 @@ keyword `chan`
 .background ./images/whitebg.png
 .play ./example/functions/closure2.go /func main/,/} // END/
 
-#############################################
-
-* First-Class Function
-.background ./images/whitebg.png
-.play ./example/functions/firstclass.go
