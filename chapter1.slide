@@ -51,10 +51,12 @@ windows:
 
 *windows*
 
+    set GOROOT=C:\go
     set PATH=%PATH%;C:\go\bin
 
 *linux/Macbook*
 
+    export GOROOT=~/goroot
     export PATH=$PATH:~/goroot/bin
 
 #############################################
@@ -173,7 +175,7 @@ for
 * Exercise
 .background whitebg.png
 
-open a file oscar_age_mail.csv
+open a file oscar_age_male.csv
 print any actors name who got the oscar more than one time
 
 
