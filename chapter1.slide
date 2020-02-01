@@ -570,3 +570,15 @@ Unlike C, Go has no pointer arithmetic.
     area := rec.w * rec.l
 
 #############################################
+
+* Exercise
+.background ./images/whitebg.png
+
+pick a Web Framework to make the FizzBuzz API
+
+response:
+
+    {
+        "number": 3,
+        "fizzbuzz": "Fizz"
+    }
