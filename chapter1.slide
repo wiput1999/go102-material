@@ -9,6 +9,8 @@ Technical Coach
 
 yod.pallat@gmail.com
 https://github.com/pallat
+https://github.com/goyod
+https://github.com/pyod
 
 
 * Getting Started
@@ -51,10 +53,12 @@ windows:
 
 *windows*
 
+    set GOROOT=C:\go
     set PATH=%PATH%;C:\go\bin
 
 *linux/Macbook*
 
+    export GOROOT=~/goroot
     export PATH=$PATH:~/goroot/bin
 
 #############################################
@@ -167,26 +171,6 @@ for
     for {
         
     }
-
-#############################################
-
-* Exercise
-.background whitebg.png
-
-open a file oscar_age_mail.csv
-print any actors name who got the oscar more than one time
-
-
-    Marlon Brando
-    Daniel Day-Lewis
-    Sean Penn
-    Tom Hanks
-    Fredric March
-    Spencer Tracy
-    Gary Cooper
-    Jack Nicholson
-    Dustin Hoffman
-
 
 #############################################
 
@@ -359,3 +343,242 @@ basic type
 - *false* _for_ _the_ _boolean_ _type_
 - *""* (the empty string) for strings
 
+#############################################
+
+* Array
+.background ./images/whitebg.png
+
+var name [n]T
+
+    var array [5]string
+
+#############################################
+
+* Array (for)
+.background ./images/whitebg.png
+
+var name [n]T
+
+    var array [5]string
+
+    for i := range array {
+        fmt.Println(array[i])
+    }
+
+#############################################
+
+* Array (for)
+.background ./images/whitebg.png
+
+var name [n]T
+
+    var array [5]string
+
+    for i, v := range array {
+        fmt.Println(i, v)
+    }
+
+#############################################
+
+* Slice
+.background ./images/whitebg.png
+
+var name []T
+
+    var slice []int
+
+    primes := [...]int{2, 3, 5, 7, 11, 13}    
+    slice = primes[1:4]
+
+    for i := range slice {
+        fmt.Println(slice[i])
+    }
+
+#############################################
+
+* Zero value of slice is nil
+.background ./images/whitebg.png
+
+    var s []int
+
+    if s == nil {
+        fmt.Println("it's nil")
+    }
+
+make it first
+
+    s := make([]int, 5)
+
+#############################################
+
+* append slice
+.background ./images/whitebg.png
+
+    s := []int{1, 2, 3, 4, 5}
+    s = append(s, 6, 7, 8)
+
+
+#############################################
+
+* Exercise
+
+.background ./images/whitebg.png
+.link https://tour.golang.org/moretypes/18 https://tour.golang.org/moretypes/18
+.link https://go-tour-th.appspot.com/moretypes/18 https://go-tour-th.appspot.com/moretypes/18
+
+#############################################
+
+* map[T]T
+.background ./images/whitebg.png
+
+    var m map[string]string
+
+    if m == nil {
+        fmt.Println("it's nil")
+    }
+
+#############################################
+
+* map[T]T
+.background ./images/whitebg.png
+
+make it first
+
+    m := make(map[string]string)
+
+    if m == nil {
+        fmt.Println("it's nil")
+    }
+
+    m["a"] = "apple"
+    m["b"] = "banana"
+    m["c"] = "coconut"
+    m["d"] = "durian"
+    m["e"] = "elderberry"
+    m["f"] = "fig"
+    m["g"] = "guava"
+
+#############################################
+
+* map[T]T
+.background ./images/whitebg.png
+
+    m := map[string]string{
+        "a" : "apple",
+        "b" : "banana",
+        "c" : "coconut",
+        "d" : "durian",
+        "e" : "elderberry",
+        "f" : "fig",
+        "g" : "guava",
+    }
+
+    delete(m, "d")
+
+    for k, v := range m {
+        fmt.Println(k, v)
+    }
+
+#############################################
+
+* Exercise
+.background whitebg.png
+
+open a file oscar_age_male.csv
+print any actors name who got the oscar more than one time
+
+
+    Marlon Brando
+    Daniel Day-Lewis
+    Sean Penn
+    Tom Hanks
+    Fredric March
+    Spencer Tracy
+    Gary Cooper
+    Jack Nicholson
+    Dustin Hoffman
+
+#############################################
+
+* len()
+.background ./images/whitebg.png
+
+    s := []primes{2, 3, 5, 7, 11, 13}
+    m := map[string]string{
+        "a" : "apple",
+        "b" : "banana",
+        "c" : "coconut",
+        "d" : "durian",
+        "e" : "elderberry",
+        "f" : "fig",
+        "g" : "guava",
+    }
+
+    fmt.Println(len(s), len(m))
+
+#############################################
+
+* Pointer
+.background ./images/whitebg.png
+
+Go has pointers. A pointer holds the memory address of a value.
+
+The type *T is a pointer to a T value. Its zero value is nil.
+
+    var p *int
+The & operator generates a pointer to its operand.
+
+    i := 42
+    p = &i
+The * operator denotes the pointer's underlying value.
+
+    fmt.Println(*p) // read i through the pointer p
+    *p = 21         // set i through the pointer p
+This is known as "dereferencing" or "indirecting".
+
+Unlike C, Go has no pointer arithmetic.
+
+#############################################
+
+* Type
+.background ./images/whitebg.png
+
+    type newType T
+
+    type text string
+
+    type aliasType = T
+
+    type text = string
+
+#############################################
+
+* struct type
+.background ./images/whitebg.png
+
+    type rectangle struct {
+        w,l float64
+    }
+
+#############################################
+
+* struct usage
+.background ./images/whitebg.png
+
+    rec := rectangle{w: 10, l: 12}
+
+    area := rec.w * rec.l
+
+#############################################
+
+* Exercise
+.background ./images/whitebg.png
+
+pick a Web Framework to make the FizzBuzz API
+
+response:
+
+    {
+        "number": 3,
+        "fizzbuzz": "Fizz"
+    }

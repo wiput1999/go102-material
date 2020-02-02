@@ -3,13 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	show(area)
-}
+	var add = func(a, b int) int {
+		return a + b
+	}
 
-func area(dx, dy int) int {
-	return dx * dy
-}
-
-func show(fn func(int, int) int) {
-	fmt.Printf("area of 64x48 = %d", fn(64, 48))
+	fmt.Println(add(1, 2))
 }
